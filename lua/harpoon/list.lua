@@ -278,12 +278,13 @@ function HarpoonList:resolve_displayed(displayed, length)
         end
     end
 
+    local old_items = self.items
     self.items = new_list
     self._length = length
     if change > 0 then
         Extensions.extensions:emit(
             Extensions.event_names.LIST_CHANGE,
-            { list = self }
+            { list = self, old_items = old_items }
         )
     end
 end
