@@ -281,7 +281,10 @@ function HarpoonList:resolve_displayed(displayed, length)
     self.items = new_list
     self._length = length
     if change > 0 then
-        Extensions.extensions:emit(Extensions.event_names.LIST_CHANGE)
+        Extensions.extensions:emit(
+            Extensions.event_names.LIST_CHANGE,
+            { list = self }
+        )
     end
 end
 
