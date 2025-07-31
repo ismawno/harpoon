@@ -236,6 +236,7 @@ function M.get_default_config()
                         "to position",
                         pos
                     )
+		    if not item.context then return end
 
                     item.context.row = pos[1]
                     item.context.col = pos[2]
