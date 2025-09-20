@@ -225,7 +225,7 @@ function M.get_default_config()
                 )
                 local item = list:get_by_value(bufname)
 
-                if item then
+                if item and item.context then
                     local pos = vim.api.nvim_win_get_cursor(0)
 
                     Logger:log(
